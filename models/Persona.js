@@ -42,6 +42,7 @@ class Persona{
     }
 
     //Arreglos
+
     //CRUD
     //Create
     adquirirPertenencia(nuevaPertenencia){
@@ -95,8 +96,21 @@ class Persona{
     }
     
     //Update
+    actualizarPertenencia(pertenenciaModificada){
+        let resultado = this.pertenencias.find((pertenencia) => pertenencia.id === pertenenciaModificada.id)
+        if(resultado){
+            resultado = pertenenciaModificada
+            console.log("Se modificó la pertenencia con el id:", resultado.id, "Ahora es", resultado.descripcion, "con categoria", resultado.categoria)
 
+        }else{
+            console.log("No se encontró una pertenencia con el id", id)
+        }
+    }
     //Delete
+    eliminarPertenencia(id){
+        this.pertenencias = this.pertenencias.filter((pertenencia) => pertenencia.id !== id)
+        console.log("Se eliminó la pertenencia con id", id)
+    }
 }
 
 

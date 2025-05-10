@@ -2,6 +2,7 @@
 const Configuracion = require("./config")
 const Datos = require("./inicializacion")
 const Pertenencia = require("./models/Pertenencias")
+const Empleado = require("./models/Empleado")
 
 const {personaC, personaC2, personaC3} = Datos
 
@@ -41,3 +42,19 @@ personaC.imprimirPertenencias()
 personaC.buscarPertenencia(4)
 personaC.buscarPertenencia(2)
 personaC.buscarCategoria("Tecnología")
+
+telefono2.descripcion = "Telefono solar"
+personaC.actualizarPertenencia(telefono2)
+personaC.imprimirPertenencias()
+
+personaC.eliminarPertenencia(3)
+personaC.imprimirPertenencias()
+
+const empleado = new Empleado("Han", "Solo", 40, "Millenium Falcon", new Date(), 10000, "Programador")
+
+empleado.darInformacionEmpleado()
+
+///Biblioteca
+///Puede tener Libros
+///Libros - Impresos
+///Libros - Digitales
