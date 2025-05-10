@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "npm run build && npm run ejecutar",
+    "build": "tsc",
+    "ejecutar": "node ./dist/index.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "colors": "^1.4.0",
-    "moment": "^2.30.1"
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.4",
+    "@types/node": "^22.15.17",
+    "typescript": "^5.8.3"
   }
 }
